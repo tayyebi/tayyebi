@@ -1,2 +1,2 @@
 - Visit my website [TYYI.NET](http://tyyi.net)
-- Read my resume [Web version](https://tayyebi.github.com/)
+- Read my resume [Web version](https://tayyebi.github.com/tayyebi)/[PDF](https://github.com/tayyebi/myCV/raw/master/CV.pdf)
