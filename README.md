@@ -1,0 +1,2 @@
+- Visit my website [TYYI.NET](http://tyyi.net)
+- Read my resume [Web version](https://tayyebi.github.com/)
