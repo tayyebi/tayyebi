@@ -1,2 +1,2 @@
 - Visit my website [TYYI.NET](http://tyyi.net)
-- Read my resume [Click me](https://tayyebi.github.io/tayyebi/)
+- Read my resume [Click me](http://kouy.ir/cv)
