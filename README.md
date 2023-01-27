@@ -1,7 +1,2 @@
-- Visit my website [TYYI.NET](http://tyyi.net)
-- Read my resume [Click me](http://kouy.ir/cv)
-- Lectures:
-  - 2019; Student Scientific Society of Computer Engineering, Faculty of Engineering, Bu-Ali Sina University; [Full-Stack Developer](https://github.com/tayyebi/BASU-Full-Stack-98)
-  - 2019; Student Scientific Society of Computer Engineering and Information Technology, Tuyserkan Faculty of Technical and Natural Resources, Bu-Ali Sina University; [Fundamentals of Programming](https://github.com/tayyebi/BASU-Fundamentals-98)
-  - 2020; Student Scientific Society of Computer Engineering, Faculty of Engineering, Bu-Ali Sina University; [Crash Course on MVC](https://github.com/tayyebi/BASU-MVC-99)
-  - 2021; ...; [Software Architecture](https://github.com/tayyebi/Software-Architecture-1400)
+> The CV presents a full history of your academic credentials, so the length of the document is variable. In contrast, a resume presents a concise picture of your skills and qualifications for a specific position, so length tends to be shorter and dictated by years of experience (generally 1-2 pages).
+(-ucdavis.edu)[https://icc.ucdavis.edu/materials/resume/resumecv#:~:text=The%20CV%20presents%20a%20full,generally%201%2D2%20pages).]
