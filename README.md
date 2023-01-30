@@ -1,1 +1,3 @@
-> The CV presents a full history of your academic credentials, so the length of the document is variable. In contrast, a resume presents a concise picture of your skills and qualifications for a specific position, so length tends to be shorter and dictated by years of experience (generally 1-2 pages). [-ucdavis.edu](https://icc.ucdavis.edu/materials/resume/resumecv)
+![Typing SVG](readme-typing-svg.demolab.com.svg)
+
+![visitors](https://visitor-badge.glitch.me/badge?page_id=tayyebi&left_color=green&right_color=red)
