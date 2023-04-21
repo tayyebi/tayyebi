@@ -21,8 +21,9 @@
 \usepackage{ragged2e}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\input{glyphtounicode}
+\usepackage{fontawesome}
 
+\input{glyphtounicode}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -55,6 +56,8 @@
   linkcolor=blue!50!red,
   urlcolor=blue!70!red
 }
+\let\orighref\href
+\renewcommand{\href}[2]{\orighref{#1}{#2\,{\textsuperscript{\tiny{\faExternalLink}}}}}
 
 \raggedbottom
 \raggedright
@@ -118,9 +121,11 @@
 %----------HEADER-----------
 
 \begin{center}
-    \textbf{\Huge \scshape Mohammad R. Tayyebi} \\ \vspace{1pt}
+    \textbf{\Huge \scshape Mo Tayyebi} \\ \vspace{5pt}
+
+    \textbf{ Software Developer • MBA • WorldSkills Champion • C\#, Linux, BI } \\ \vspace{1pt}
     
-    \href{mailto:tayyebimohammadreza+r@gmail.com}{\small{tayyebimohammadreza@gmail.com}} $|$ 
+    \href{mailto:tayyebimohammadreza+r@gmail.com}{\small{smile@tyyi.net}} $|$ 
     \href{https://www.linkedin.com/in/mohammadrezatayyebi/}{\small{linkedin.com/in/mohammadrezatayyebi}} $|$
     \href{https://github.com/tayyebi}{\small{github.com/tayyebi}}
     
@@ -128,11 +133,11 @@
 
 
 %-----------PROFILE-----------
-\section{Summary}
-    \begin{itemize}[leftmargin=0.15in, label={}]
-        \item\justifying
-            Software Engineer with 5\textsuperscript{+} years of experience mainly focused on back-end development and business analysis. Competitive programmer, skilled with database design and server maintenance, exact in tracking and tracing projects, skilled with reporting, comfortable in collaboration with internal and external stakeholders, always ready for challenges, active learner.
-            \end{itemize}
+% \section{Summary}
+%     \begin{itemize}[leftmargin=0.15in, label={}]
+%         \item\justifying
+%             As an MBA and software developer with 7 years of experience, I bring a unique blend of technical and business skills to the table. My technical expertise includes proficiency in a variety of programming languages and frameworks, as well as experience in software design, development, and testing. In addition, my MBA has equipped me with a deep understanding of business strategy, operations, and project management. I have successfully led teams to deliver complex software projects on time and within budget, while also ensuring that the solutions meet the needs of the business. I am a strong communicator and collaborator, able to work effectively with both technical and non-technical stakeholders. Overall, I am a well-rounded software professional with a proven track record of success in both technical and managerial roles.
+%             \end{itemize}
 
 %-----------EXPERIENCE-----------
 \section{Experience}
@@ -141,18 +146,14 @@
     \resumeSubheading
         {Software Developer}{}
         {Freelancer and Independent Contractor}{2017 -- Present}
-        
-      \resumeSubSubheading
-          {}{}
-          \resumeItemListStart
+        \resumeItemListStart
             \resumeItem{Served 50\textsuperscript{+} legal and individual customers covering various custom software design needs from interface design to BI reporting.}
-            \resumeItem{Developed 3 IoT and Sensors Network projects back-end and sockets in collaboration with electronics and robotics engineers.}
-            \resumeItem{Developed 15\textsuperscript{+} desktop and 30\textsuperscript{+} web applications.}
-            \resumeItem{\href{https://kouy.ir/recommendation}{Recommended} by 10\textsuperscript{+} customers and managers.}
+            \resumeItem{Developed 15\textsuperscript{+} desktop, 30\textsuperscript{+} web applications, and 3 IoT and Sensors Network utility programs.}
+            \resumeItem{\href{https://kouy.ir/recommendation}{Recommended} by 10\textsuperscript{+} customers and managers with a diverse \href{https://kouy.ir/portfolio}{portfolio}.}
           \resumeItemListEnd
 
     \resumeSubheading
-      {IT Consultant and Web Developer}{Part-time Remote  $\bullet$ Maharashtra, India}
+      {IT Consultant \& Web Developer}{Part-time Remote  $\bullet$ Maharashtra, India}
       {Universal Versatile Society}{June 2022 -- Present}
 
       \resumeItemListStart
@@ -163,7 +164,16 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {Instructor}{Guest Teacher $\bullet$ Hamedan, Persia}
+      {Full-stack Developer}{Full-time On-site $\bullet$ Hamedan, Iran}
+      {Tokan Tav Tejarat}{June 2022 -- December 2022}
+
+      \resumeItemListStart
+        \resumeItem{Established a clean code-base of an online marketplace based on Laravel to handle the company's 3\textsuperscript{+} years strategic plan of growth and development. Designed database and implemented APIs with the approach to achieve the most possible scalability of the business by accepting wide diversity of products and services to be traded online.}
+        \resumeItem{Launched required infrastructure for production and development containing GIT, CDN, SMTP, KMS, workflow, FTP, monitoring, and database servers to automate and optimize the company's workflow.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Guest Teacher}{$\bullet$ Hamedan, Iran}
       {Bu-Ali Sina University}{2018 -- 2020}
 
       \resumeItemListStart
@@ -172,15 +182,17 @@
             
       \resumeItemListEnd
 
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
     \resumeSubheading
-      {Full-stack Developer}{Full-time on-site $\bullet$ Hamedan, Persia}
-      {Tokan Tav Tejarat}{June 2022 -- December 2022}
-
-      \resumeItemListStart
-        \resumeItem{Established a clean code-base of an online marketplace based on Laravel to handle the company's 3\textsuperscript{+} years strategic plan of growth and development. Designed database and implemented APIs with the approach to achieve the most possible scalability of the business by accepting wide diversity of products and services to be traded online.}
-        \resumeItem{Launched required infrastructure for production and development containing GIT, CDN, SMTP, KMS, workflow, FTP, monitoring, and database servers to automate and optimize the company's workflow.}
-      \resumeItemListEnd
-
+      {Khaje Nasir Toosi University of Technology}{$\bullet$ Tehran, Iran}
+      {Master of Business Administration, Minor in Marketing Management}{September 2021 -- May 2023}
+    \resumeSubheading
+      {Bu-Ali Sina University}{$\bullet$ Hamedan, Iran}
+      {Bachelor of Science in Computer Engineering, Minor in Information Technology}{September 2016 -- August 2021}
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS_N_SKILLS-----------
@@ -208,10 +220,28 @@
      \href{https://www.tradingview.com/u/tayyebi}{PineScript v5},
      \href{https://gist.github.com/tayyebi/927aee5787ba45b3ab0fd637bedfd653}{Google Apps Script}
      } \\
-     \textbf{Server Administration}{: Windows Server, Debian/Ubuntu Linux, Docker} \\
-     \textbf{Soft Skills and Project Management}{: SWOT Analysis, BA, UML} \\
+     \textbf{DevOps}{: Windows Server, Debian/Ubuntu Linux, Docker} \\
+     \textbf{Project Management}{: SWOT Analysis, BA, UML} \\
     }}
  \end{itemize}
+
+%-----------AWARDS-----------
+\section{Honors and Awards}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{WorldSkills 2017} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{$\bullet$ Abu-Dhabi, United Arab Emirates}
+          \resumeItemListStart
+            \resumeItem{IT - Software Solutions for Business}
+            \resumeItem{4 days of web, desktop, and mobile programming, data architecture, and software analysis in competition with tens of talented youth from different countries.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{$\bullet$ Tehran, Iran}
+          \resumeItemListStart
+            \resumeItem{Computer Science, Digital Governance and Information Security}
+            \resumeItem{Implemented a centralized authentication and authorization system.}
+            \resumeItem{Interdisciplinary placed among the top 45 selected students out of 25339 and awarded in the most creditable scientific festival of Iran, even before attending university.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
 
 %-----------PUBLICATIONS-----------
 \section{Publications}
@@ -237,36 +267,5 @@
           {\textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{2013}.}{\deemph{No.} 90163030986}
 
     \resumeSubHeadingListEnd
-
-%-----------AWARDS-----------
-\section{Honors and Awards}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{WorldSkills 2017} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{$\bullet$ Abu-Dhabi, United Arab Emirates}
-          \resumeItemListStart
-            \resumeItem{IT - Software Solutions for Business}
-            \resumeItem{4 days of web, desktop, and mobile programming, data architecture, and software analysis in competition with tens of talented youth from different countries.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{$\bullet$ Tehran, Persia}
-          \resumeItemListStart
-            \resumeItem{Computer Science}
-            \resumeItem{Implemented a centralized authentication and authorization system.}
-            \resumeItem{Interdisciplinary placed among the top 45 selected students out of 25339 and awarded in the most creditable scientific festival of Persia, even before attending university.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Khaje Nasir Toosi University of Technology}{$\bullet$ Tehran, Persia}
-      {Master of Business Administration, Minor in Marketing Management}{September 2021 -- May 2023}
-    \resumeSubheading
-      {Bu-Ali Sina University}{$\bullet$ Hamedan, Persia}
-      {Bachelor of Science in Computer Engineering, Minor in Information Technology}{September 2016 -- August 2020}
-  \resumeSubHeadingListEnd
-
-%-------------------------------------------
+    
 \end{document}
