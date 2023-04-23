@@ -5,7 +5,8 @@
 % License: MIT
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[11pt,a4paper]{article}
+\linespread{1.25}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -26,16 +27,17 @@
 \input{glyphtounicode}
 
 %----------FONT OPTIONS----------
-% sans-serif
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
+\usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
 
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
+% \usepackage{tgadventor}
+% \renewcommand*\familydefault{\sfdefault}
+% \usepackage[T1]{fontenc}
 
+\usepackage{CormorantGaramond}
+\usepackage{charter}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -84,8 +86,8 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#1} & \small\deemph{#2} \\
+      \textit{\small#3} & \textit{\small\deemph{#4}} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -99,7 +101,7 @@
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
+      \small#1 & \deemph{#2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -113,8 +115,6 @@
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \begin{document}
 
@@ -123,7 +123,7 @@
 \begin{center}
     \textbf{\Huge \scshape Mo Tayyebi} \\ \vspace{5pt}
 
-    \textbf{ Software Developer • MBA • WorldSkills Champion • C\#, Linux, BI } \\ \vspace{1pt}
+    \textbf{ WorldSkills Champion • Full-stack Software Developer • C\#, PHP, SQL Server, Linux, Docker } \\ \vspace{1pt}
     
     \href{mailto:tayyebimohammadreza+r@gmail.com}{\small{smile@tyyi.net}} $|$ 
     \href{https://www.linkedin.com/in/mohammadrezatayyebi/}{\small{linkedin.com/in/mohammadrezatayyebi}} $|$
@@ -131,115 +131,141 @@
     
 \end{center}
 
+\begin{justify}
 
-%-----------PROFILE-----------
+%-----------Summary-----------
 % \section{Summary}
 %     \begin{itemize}[leftmargin=0.15in, label={}]
-%         \item\justifying
+%         \item
 %             As an MBA and software developer with 7 years of experience, I bring a unique blend of technical and business skills to the table. My technical expertise includes proficiency in a variety of programming languages and frameworks, as well as experience in software design, development, and testing. In addition, my MBA has equipped me with a deep understanding of business strategy, operations, and project management. I have successfully led teams to deliver complex software projects on time and within budget, while also ensuring that the solutions meet the needs of the business. I am a strong communicator and collaborator, able to work effectively with both technical and non-technical stakeholders. Overall, I am a well-rounded software professional with a proven track record of success in both technical and managerial roles.
 %             \end{itemize}
-
-%-----------EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-        {Software Developer}{}
-        {Freelancer and Independent Contractor}{2017 -- Present}
-        \resumeItemListStart
-            \resumeItem{Served 50\textsuperscript{+} legal and individual customers covering various custom software design needs from interface design to BI reporting.}
-            \resumeItem{Developed 15\textsuperscript{+} desktop, 30\textsuperscript{+} web applications, and 3 IoT and Sensors Network utility programs.}
-            \resumeItem{\href{https://kouy.ir/recommendation}{Recommended} by 10\textsuperscript{+} customers and managers with a diverse \href{https://kouy.ir/portfolio}{portfolio}.}
-          \resumeItemListEnd
-
-    \resumeSubheading
-      {IT Consultant \& Web Developer}{Part-time Remote  $\bullet$ Maharashtra, India}
-      {Universal Versatile Society}{June 2022 -- Present}
-
-      \resumeItemListStart
-        \resumeItem{Digitally transformed the business by providing a multi-vendor marketplace with the least time and cost which became possible by customization of the WordPress/WooCommerce.}
-        \resumeItem{Configured Docker and containerized the solution on the DigitalOcean which benefits the organization with scale profit by maximizing usage of the cloud machine's available resources.}
-        \resumeItem{Reorganized project architecture to maximize alignment of project code structure with work break structures. It saved 2 weeks of training time for each new volunteer and near to 1 out of 6 hours a day in task clearance because of the clean and direct assignment of tasks to the equivalent file in the code repository. }
-        \resumeItem{Co-lead, interviewed and trained a team of 12 volunteer programmers and content developers with high diversity in case of time-zone, nationality, and proficiency level. Currently supporting the team with required training.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Full-stack Developer}{Full-time On-site $\bullet$ Hamedan, Iran}
-      {Tokan Tav Tejarat}{June 2022 -- December 2022}
-
-      \resumeItemListStart
-        \resumeItem{Established a clean code-base of an online marketplace based on Laravel to handle the company's 3\textsuperscript{+} years strategic plan of growth and development. Designed database and implemented APIs with the approach to achieve the most possible scalability of the business by accepting wide diversity of products and services to be traded online.}
-        \resumeItem{Launched required infrastructure for production and development containing GIT, CDN, SMTP, KMS, workflow, FTP, monitoring, and database servers to automate and optimize the company's workflow.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Guest Teacher}{$\bullet$ Hamedan, Iran}
-      {Bu-Ali Sina University}{2018 -- 2020}
-
-      \resumeItemListStart
-        \resumeItem{Was instructor of \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop at \emph{Scientific Society of Computer Science and Engineering}. }
-        \resumeItem{Taught \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC Design Pattern}} crash course at \emph{Scientific Society of Computer Science and Engineering}. }
-            
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Khaje Nasir Toosi University of Technology}{$\bullet$ Tehran, Iran}
-      {Master of Business Administration, Minor in Marketing Management}{September 2021 -- May 2023}
+      {Master of Business Administration (MBA)}{September 2021 -- May 2023}
+      {Khaje Nasir Toosi University of Technology}{Tehran, Iran}
     \resumeSubheading
-      {Bu-Ali Sina University}{$\bullet$ Hamedan, Iran}
-      {Bachelor of Science in Computer Engineering, Minor in Information Technology}{September 2016 -- August 2021}
+      {Bachelor of Science in Computer Engineering}{September 2016 -- August 2021}
+      {Bu-Ali Sina University}{Hamedan, Iran}
+  \resumeSubHeadingListEnd
+
+% -----------EXPERIENCE-----------
+\section{Experience}
+    \begin{small}
+    \href{https://kouy.ir/recommendation}{Recommended} by 10\textsuperscript{+} companies and individual consumers.
+    \end{small}
+
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Senior Software Developer}{Full-time On-site | Hamedan, Iran}
+      {Tokan Tav Tejarat}{June 2022 -- December 2022}
+      \resumeItemListStart
+        \resumeItem{Worked closely with CEO, did tens of interview sessions with the stakeholders, analyzed business needs, designed database, generated Entity Relationship Diagrams (ERD), and implemented Laravel\char`\~MySQL migrations. Extracted data from third-party sources, did data cleaning and normalization using Power BI, and merged results into Laravel seeds.}
+        \resumeItem{Initialized RESTful back-end with Swagger client, implemented token authentication as well as API versioning, and wrote scaffolding scripts to generate codes for common operations on the Data Layer and increase the DX.}
+        \resumeItem{Led a team containing a front-end Ionic-ReactJS developer, front-end web developer, back-end PHP developer, SEO specialist, and content managers. Reviews the documentation to ensure the successful transfer of the project knowledge and decisions to the next team.}
+        \resumeItem{Assigned tasks to the team on Kanban board based on Work Break Structure and Gantt chart, and did review and merge of the Pull Requests.}
+        \resumeItem{Installed GIT, CDN, SMTP, KMS, workflow, FTP, monitoring, and database servers. Wrote bash scripts and triggered them using CronJobs to automatically clone reviewed codes and run migrations of micro-services (CI/CD).}
+        \resumeItem{Used Google Analytics, Google Trends, and Google Search Console to increase the SEO mark of the web pages and to leverage the content writers' efficiency.}
+        \resumeItemListEnd
+    \resumeSubheading
+      {Web Developer}{Part-time Remote  | Maharashtra, India}
+      {Universal Versatile Society}{June 2022 -- Present}
+      \resumeItemListStart
+        \resumeItem{Collaborated with a team of 12 United Nations Volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers.}
+        \resumeItem{Configured a WordPress/WooCommerce application behind a Dockerized Nginx Reverse Proxy, as a temporary solution.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+        {Full-stack Sofware Developer}{}
+        {Self-employed (\href{https://gordarg.com}{Gordarg.com})}{2018 -- Present}
+        \resumeItemListStart
+            \resumeItem{Served 50\textsuperscript{+} legal and individual customers covering various needs.}
+            \resumeItem{Launched a brand named 'Gordarg' to give better support through CRM, assistants, and individual contractors.}
+          \resumeItemListEnd
+    \resumeSubheading
+        {Software Developer}{}
+        {Freelancer}{2015 -- 2018}
+        \resumeItemListStart
+            \resumeItem{Designed websites for music bands, local stores, institutes, and small businesses with ASP.NET Web Forms, SQL Server, CSS3, HTML5, and jQuery.}
+          \resumeItemListEnd
+    \resumeSubheading
+        {Junior Software Developer}{}
+        {Freelancer}{2013 -- 2015}
+        \resumeItemListStart
+            \resumeItem{Designed restaurant menus, desktop applications, video players, and catalogs using Adobe Flash CS5 (Action Script), Java and C\# Windows Forms Applications.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+  
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Guest Teacher}{}
+      {Bu-Ali Sina University}{2018 -- 2020}
+
+      \resumeItemListStart
+        \resumeItem{Was instructor of \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop and \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC}} crash course at \emph{Scientific Society of Computer Science and Engineering}. }
+            
+      \resumeItemListEnd
+
   \resumeSubHeadingListEnd
 
 %-----------PROJECTS_N_SKILLS-----------
-\section{Skills, Projects, and Technologies}
+\section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{PHP and MySQL}{:
-     \href{https://github.com/tayyebi/rest-api-laravel-swagger-practice}{PHP 8 with Laravel},
-     \href{https://github.com/Gordarg/SF}{PHP 5}
-     }\\
-     \textbf{C\# and SQL Server}{:     \href{https://github.com/tayyebi/TehranStocks}{ASP.NET Core 3},
-     \href{https://github.com/tayyebi/Dr-Hesaabi-KhajeNasirAccountingSystem}{WCF with Xamarin},
-     \href{https://github.com/tayyebi/TuneMax}{Windows Forms Application with EntityFramework 6},
-     \href{https://github.com/tayyebi/humancapitals}{WPF with SQLite 3},
-     \href{https://github.com/tayyebi/TuneMax}{ASP.NET MVC 2 with jQuery},
-     \href{https://github.com/tayyebi/SnowCity}{ASP.NET Web Forms 4.0 with Ajax},
-     \href{https://github.com/tayyebi/HQCMA}{ASP.NET Web Forms 2.0}
-     }\\
-     \textbf{Other Languages}{:
-     \href{https://github.com/tayyebi/Checkeh}{Java (Android)},
-     \href{https://github.com/tayyebi/NlpSemanticAnalysis}{Python with TensorFlow},
-     \href{https://github.com/tayyebi/Baqemboogh}{C++ 14 (Android)},
-     \href{https://gist.github.com/tayyebi/da6a754e3af0553b897f9237248dafcc}{C++ 11},
-     \href{https://github.com/tayyebi/textyy}{JavaScript},
-     \href{https://www.tradingview.com/u/tayyebi}{PineScript v5},
-     \href{https://gist.github.com/tayyebi/927aee5787ba45b3ab0fd637bedfd653}{Google Apps Script}
-     } \\
-     \textbf{DevOps}{: Windows Server, Debian/Ubuntu Linux, Docker} \\
-     \textbf{Project Management}{: SWOT Analysis, BA, UML} \\
-    }}
+    \item {
+        \textbf{Programming:}
+        \href{https://github.com/tayyebi/TehranStocks}{C\# with ASP.NET Core},
+        \href{https://github.com/tayyebi/rest-api-laravel-swagger-practice}{PHP 8 with Laravel},
+        \href{https://github.com/tayyebi/textyy}{JavaScript}
+        \\
+        \textbf{DevOps:}
+        {Ubuntu Server},
+        {Docker},
+        {CI/CD},
+        {Developer Experience (DX)}
+        \\
+        \textbf{IT Project Management:}
+        {UML},
+        {Business Analysis},
+        {Database Design},
+        {SCRUM},
+        {Budget Management}
+    }
+    \item{
+         \textbf{Other Technologies:}\small{
+         \href{https://github.com/tayyebi/NlpSemanticAnalysis}{Python with TensorFlow},
+         \href{https://github.com/tayyebi/Baqemboogh}{C++ 14 (Android)},
+         \href{https://github.com/tayyebi/Checkeh}{Java},         \href{https://gist.github.com/tayyebi/927aee5787ba45b3ab0fd637bedfd653}{Google Apps Script},
+         \href{https://www.tradingview.com/u/tayyebi}{PineScript v5},
+         \href{https://github.com/Gordarg/SF}{PHP 5},
+         \href{https://github.com/tayyebi/Dr-Hesaabi-KhajeNasirAccountingSystem}{WCF with Xamarin},
+         \href{https://github.com/tayyebi/TuneMax}{Windows Forms Application with EntityFramework 6},
+         \href{https://github.com/tayyebi/humancapitals}{WPF with SQLite 3},
+         \href{https://github.com/tayyebi/TuneMax}{ASP.NET MVC 2 with jQuery UI},
+         \href{https://github.com/tayyebi/SnowCity}{ASP.NET Web Forms 4.0 with Ajax},
+         \href{https://github.com/tayyebi/HQCMA}{ASP.NET Web Forms 2.0},
+         \href{https://gist.github.com/tayyebi/da6a754e3af0553b897f9237248dafcc}{C++ 11}
+         }
+    }
+     
  \end{itemize}
 
 %-----------AWARDS-----------
-\section{Honors and Awards}
+\section{Honors \& Awards}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{WorldSkills 2017} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{$\bullet$ Abu-Dhabi, United Arab Emirates}
+          {\textbf{WorldSkills 2017 Abu-Dhabi} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{}
           \resumeItemListStart
-            \resumeItem{IT - Software Solutions for Business}
-            \resumeItem{4 days of web, desktop, and mobile programming, data architecture, and software analysis in competition with tens of talented youth from different countries.}
+            \resumeItem{4 days of challenging web, desktop, and mobile programming, data architecture, and software analysis in the world's largest skills competition welcoming tens of talented youth professionals from different countries.}
           \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{$\bullet$ Tehran, Iran}
+          {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{}
           \resumeItemListStart
-            \resumeItem{Computer Science, Digital Governance and Information Security}
-            \resumeItem{Implemented a centralized authentication and authorization system.}
-            \resumeItem{Interdisciplinary placed among the top 45 selected students out of 25339 and awarded in the most creditable scientific festival of Iran, even before attending university.}
+            \resumeItem{Implemented a centralized authentication and authorization software, and was honored to get a place among 45 awarded students out of 25339 (top \(\frac{1}{10}\)\%) in the most creditable scientific festival of the nation, at the age of 17.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -248,7 +274,7 @@
     \resumeSubHeadingListStart
     
       \resumeProjectHeading
-          {\textbf{Book} $|$ \href{https://tayyebi.github.io/devops-book/}{\emph{Department of Information Technology and other magics }}}{\deemph{Open-source}}
+          {\textbf{Book} $|$ \href{https://tayyebi.github.io/devops-book/}{\emph{Department of Information Technology}}}{\deemph{Open-source}}
 
     \resumeSubHeadingListEnd
 
@@ -256,16 +282,30 @@
 \section{Certifications}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Data Analytics: Foundations} $|$ NASBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/10c24841aac6b0c139f4971a8efd6d10356dc105124e31fa10eb32aa14ce3392}{\deemph{ID} \small{ARJJpf3C\_YEzxZBHzfKYZC0ItgT0}}}
+          {\textbf{Data Analytics: Foundations} $|$ NASBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/10c24841aac6b0c139f4971a8efd6d10356dc105124e31fa10eb32aa14ce3392}{\deemph{ID} \small{ARJ...T0}}}
       \resumeProjectHeading
-          {\textbf{Business Process Modeling} $|$ PMI -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/3d1e244d9234631a908175486d19855434634d7f61cec316326ba4eb269bb041}{\deemph{ID} \small{AfYAsNtoeNfnZLlUaZbuEe8pVAoc}}}
+          {\textbf{Business Process Modeling} $|$ PMI -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/3d1e244d9234631a908175486d19855434634d7f61cec316326ba4eb269bb041}{\deemph{ID} \small{AfY...oc}}}
       \resumeProjectHeading
-          {\textbf{Business Analysis Foundations} $|$ IIBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/51dd265ef63b58255245c8f7438549551c92d30031e81b9ad864ee6994e1f6e6}{\deemph{ID} \small{ASh\_GL8boaVrpqKcmoJn2Wna8YEt}}}
+          {\textbf{Business Analysis Foundations} $|$ IIBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/51dd265ef63b58255245c8f7438549551c92d30031e81b9ad864ee6994e1f6e6}{\deemph{ID} \small{ASh...Et}}}
       \resumeProjectHeading
           {\textbf{Certified Instructor} $|$ TVTO; \emph{2015}.}{\deemph{Contract No.} 5243\, 96/30\_475616/2}
     \resumeProjectHeading
           {\textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{2013}.}{\deemph{No.} 90163030986}
 
     \resumeSubHeadingListEnd
-    
+
+%-----------LANGUAGES-----------
+\section{Languages}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Persian}     $|$ mother-tongue}{Native}
+      \resumeProjectHeading
+          {\textbf{English}     $|$ IELTS 7.0 (Mock Test)}{Fluent}
+      \resumeProjectHeading
+          {\textbf{German}      $|$ A1 (Estimate)}{Beginner}
+
+
+    \resumeSubHeadingListEnd
+
+\end{justify}
 \end{document}
