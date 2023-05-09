@@ -19,5 +19,3 @@
 | https://github.com/tayyebi/SnowCity | ASP.NET Web Forms 4.0 with Ajax |
 | https://github.com/tayyebi/TuneMax | ASP.NET MVC 2 with jQuery UI |
 | https://github.com/tayyebi/TuneMax | Windows Forms Application with EntityFramework 6 |
-
-![MohammadReza Tayebi\'s Resume](resume-en.jpg)
