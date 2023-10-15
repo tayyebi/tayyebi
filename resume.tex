@@ -6,6 +6,7 @@
 %------------------------
 
 \documentclass[11pt,a4paper]{article}
+
 \linespread{1.25}
 
 \usepackage{latexsym}
@@ -52,14 +53,23 @@
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
+\definecolor{carminered}{rgb}{1.0, 0.0, 0.22} % https://latexcolor.com/
+\definecolor{heritagered}{RGB}{147, 19, 20}
+\definecolor{ultramarine}{RGB}{0,32,96}
+\definecolor{marineblue}{RGB}{9, 129, 209}
+\definecolor{qanary}{HTML}{ffdc2a}
+\definecolor{cream}{HTML}{fefdfc}
+
+\pagecolor{cream}
+
 \urlstyle{same}
 \hypersetup{
-  colorlinks=true,
-  linkcolor=blue!50!red,
-  urlcolor=blue!70!red
+  colorlinks=false,
+  linkcolor=ultramarine,
+  urlcolor=ultramarine
 }
 \let\orighref\href
-\renewcommand{\href}[2]{\orighref{#1}{#2\,{\textsuperscript{\tiny{\faExternalLink}}}}}
+\renewcommand{\href}[2]{\orighref{#1}{#2\,{\textsuperscript{\tiny{\textcolor{heritagered}{\faExternalLink}}}}}}
 
 
 \raggedbottom
@@ -68,14 +78,16 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-4pt}\raggedright\large\color{ultramarine}
+}{}{0em}{}[\color{marineblue}\titlerule \vspace{0pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
+\newcommand{\deemph}[1]{{\color{gray}#1}}
+
 \newcommand{\info}[1]{
     \\
     \deemph{
@@ -86,8 +98,6 @@
      \vspace{-7pt}
 }
 
-\newcommand{\deemph}[1]{{\color{black!40}#1}}
-
 \newcommand{\resumeItem}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
@@ -97,7 +107,7 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
       \textbf{#1} \small\deemph{#2}
-      \textit{\small#3} \hfill \textit{\small\deemph{#4}}
+      \textit{\small #3} \hfill \textit{\small\deemph{\textcolor{marineblue}{#4}}}
     \vspace{0pt}
     %\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
     %   \textbf{#1} & \small\deemph{#2} \\
@@ -135,57 +145,35 @@
 %----------HEADER-----------
 
 \begin{center}
-    \textbf{\Huge MohammadReza Tayebi} \\ \vspace{5pt}
+    \textbf{\textcolor{ultramarine}{\Large MohammadReza Tayebi}}
+    
+    \vspace{3pt}
 
-    \textbf{ WorldSkills Champion • Information Technology Engineer • C\#, PHP, SQL Server, Linux, Docker } \\ \vspace{1pt}
+    \textbf{ PHP \& .NET Software Developer } \\ \vspace{1pt}
+    
     \small\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}
     \small\href{https://github.com/tayyebi}{github.com/tayyebi}
-    
-    \small\href{https://join.skype.com/invite/dCymvSYLJbfJ}{skype\_live:tayyebi\_mohammadreza}
-    \small\href{mailto:tayyebimohammadreza+r@gmail.com}{smile@tyyi.net}
-    
-    
+    \small\href{mailto:m@tyyi.net}{m@tyyi.net}
 \end{center}
 
-\begin{justify}
+% \begin{justify}
 
 
 %-----------PROJECTS_N_SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \item {
-        \textbf{Programming:}
-        \href{https://github.com/tayyebi/TehranStocks}{C\# with ASP.NET Core},
-        \href{https://github.com/tayyebi/rest-api-laravel-swagger-practice}{PHP 8 with Laravel},
-        \href{https://github.com/tayyebi/textyy}{JavaScript}
+        \textbf{Software Development:}
+        C\#, PHP, Vanilla JS, CSS3, SQL Server, MySQL
         \\
         \textbf{DevOps:}
-        {Ubuntu Server},
-        {Docker},
-        {CI/CD},
-        {Developer Experience (DX)}
+        Linux (Ubuntu), Docker, Nginx, S3 
         \\
         \textbf{IT Project Management:}
         {UML},
         {Business Analysis},
-        {SCRUM},
-        {Multi-Criteria Decision Analysis}
-    }
-    \item{
-         \textbf{Other Technologies:}\small{
-         \href{https://github.com/tayyebi/NlpSemanticAnalysis}{Python with TensorFlow},
-         \href{https://github.com/tayyebi/Baqemboogh}{C++ 14 (Android)},
-         \href{https://github.com/tayyebi/Checkeh}{Java},         \href{https://gist.github.com/tayyebi/927aee5787ba45b3ab0fd637bedfd653}{Google Apps Script},
-         \href{https://www.tradingview.com/u/tayyebi}{PineScript v5},
-         \href{https://github.com/Gordarg/SF}{PHP 5},
-         \href{https://github.com/tayyebi/Dr-Hesaabi-KhajeNasirAccountingSystem}{WCF with Xamarin},
-         \href{https://github.com/tayyebi/TuneMax}{Windows Forms Application with EntityFramework 6},
-         \href{https://github.com/tayyebi/humancapitals}{WPF with SQLite 3},
-         \href{https://github.com/tayyebi/TuneMax}{ASP.NET MVC 2 with jQuery UI},
-         \href{https://github.com/tayyebi/SnowCity}{ASP.NET Web Forms 4.0 with Ajax},
-         \href{https://github.com/tayyebi/HQCMA}{ASP.NET Web Forms 2.0},
-         \href{https://gist.github.com/tayyebi/da6a754e3af0553b897f9237248dafcc}{C++ 11}
-         }
+        {Multi-Criteria Decision Analysis (MCDA)},
+        {Kanban}
     }
      
  \end{itemize}
@@ -197,11 +185,10 @@
   \resumeSubHeadingListStart
     \resumeSubheading
         {Gordarg}{Hybrid}
-        {Software Engineer}{2018 -- Present}
-        \info{Contracting team of freelancers building customized software. \href{https://gordarg.com}{gordarg.com}}
+        {Full-Stack Software Engineer}{2018 -- Present}
+        \info{Design and development of custom-built software solutions for business. \href{https://blog.gordarg.com/en}{blog.gordarg.com/en}}
         \resumeItemListStart
-            \resumeItem{Served 50\textsuperscript{+} customers from various industries with software engineering and integration services.}
-            \resumeItem{Launched a brand named 'Gordarg' to provide reliable and integrated support through CRM, assistants, and contractors.}
+            \resumeItem{Launched the brand from ground up. Gathered a team of 5 engineers and served 50\textsuperscript{+} customers from various industries with software engineering and integration services. They were satisfied and honored the team with their recommendation letters.}
           \resumeItemListEnd
           
     \resumeSubheading
@@ -209,8 +196,8 @@
       {Software Engineer \& Tech Lead}{February 2023 -- August 2023}
       \info{Leading real state property portal. \href{https://zoomila.com}{zoomila.com}}
       \resumeItemListStart
-        \resumeItem{Performed \href{https://tayyebi.medium.com/breaking-the-bad-transforming-monolithic-applications-to-containers-8a769af8cf26}{change management and refactoring} of a big live software system with thousands of users daily which allowed the team to replace retired technologies with totally new alternatives of different stacks. In the 6 months of the process, less than 10 downtimes were forced and the longest duration was only 15 minutes. The change consisted of continued right-to-the-point meetings with different teams of sales, SEO, and finance.}
-        \resumeItem{Configured Linux servers and managed migration and reliability insurance. Wrote some scripts to verify abandoned software functions and database tables to fasten the refactoring.}
+        \resumeItem{Performed \href{https://tayyebi.medium.com/breaking-the-bad-transforming-monolithic-applications-to-containers-8a769af8cf26}{transformation and refactoring} of the main web application with thousands of users daily. This allowed the team to replace retired technologies. In the 6 months of the process, less than 10 downtimes were forced and the longest duration was only 15 minutes.}
+        \resumeItem{Configured Linux servers and managed migration and was responsible for reliability and accessibility. Wrote SH, SQL, and PHP scripts to discover abandoned software functions and database tables. }
         \resumeItemListEnd
         
     \resumeSubheading
@@ -218,7 +205,7 @@
       {Web Developer}{June 2022 -- Present}
       \info{UNEP and UNCCD accredited non governmental organization working for permaculture, mental health and education in India. \href{https://uvsociety.org}{uvsociety.org}}
       \resumeItemListStart
-        \resumeItem{Collaborated with a team of 12 United Nations Volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers based on a multi-tier RESTful architecture.}
+        \resumeItem{Collaborated with a team of 12 volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers based on a multi-tier RESTful architecture.}
         \resumeItem{Configured a WordPress/WooCommerce application behind a Dockerized Nginx Reverse Proxy, as a temporary solution.}
       \resumeItemListEnd
 
@@ -269,8 +256,8 @@
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    % \resumeSubheading
-    %   {MBA}{}{Khaje Nasir Toosi University of Technology}{September 2021 -- May 2023}
+    \resumeSubheading
+      {MBA}{}{Khaje Nasir Toosi University of Technology}{September 2021 -- May 2023}
     \resumeSubheading
       {Bachelor of Science in Computer Engineering}{}{Bu-Ali Sina University}
       {September 2016 -- August 2021}
@@ -317,15 +304,21 @@
 
     \resumeSubHeadingListEnd
 
-%-----------LANGUAGES-----------
+%-----------NOTES-----------
 \section{Notes}
     \resumeSubHeadingListStart
 
-      \resumeProjectHeading{\textbf{Languages} $|$ Persian, English}{}
+      \resumeProjectHeading{\textbf{Languages} $|$ Persian, English, German (A2)}{}
       \resumeProjectHeading{\textbf{Hobbies} $|$ Music Performance, Cycling, Night Sky Observation}{}
+      
+    \resumeSubHeadingListEnd        
 
-    \resumeSubHeadingListEnd
-          
+% \end{justify}
 
-\end{justify}
+\mbox{}
+\vfill
+\leavevmode
+\tiny
+\deemph{Some of the organizations and media, also wrote ‘Tayyebi’ as ‘Tayebi’ / ‘Mohammad’ as ‘Mohamad’ / ‘..dReza’ as ‘..d Reza’ which are also accepted.}
+
 \end{document}
