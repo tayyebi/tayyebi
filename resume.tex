@@ -9,11 +9,12 @@
 
 \linespread{1.25}
 
+\usepackage{graphicx}
+\usepackage{tikz}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
@@ -24,6 +25,8 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{fontawesome} % based on https://mirrors.ibiblio.org/CTAN/fonts/fontawesome/doc/fontawesome.pdf
+\include{highlight.tex}
+\usepackage[usenames,dvipsnames]{color}
 
 \input{glyphtounicode}
 
@@ -141,25 +144,30 @@
 %-------------------------------------------
 
 \begin{document}
+\graphicspath{ {./img} }
 
 %----------HEADER-----------
 
-\begin{center}
+% \begin{center}
     \textbf{\textcolor{ultramarine}{\Large MohammadReza Tayebi}}
-    
-    \vspace{3pt}
-
-    \textbf{ PHP \& .NET Software Developer } \\ \vspace{1pt}
-    
-    \small\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}
+    \\
+    \textbf{.NET \& PHP Developer}
+    \\
     \small\href{https://github.com/tayyebi}{github.com/tayyebi}
     \small\href{mailto:m@tyyi.net}{m@tyyi.net}
-\end{center}
+    \small\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}
+    \vspace{-20pt}
+% \end{center}
+
+
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
+\node[anchor=north east,xshift=-1cm,yshift=-0.5cm]{\includegraphics[scale=0.22]{pic.png}};
+\end{tikzpicture}
 
 % \begin{justify}
 
 
-%-----------PROJECTS_N_SKILLS-----------
+%-----------SKILLS-----------
 \section{Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \item {
@@ -167,7 +175,7 @@
         C\#, PHP, Vanilla JS, CSS3, SQL Server, MySQL
         \\
         \textbf{DevOps:}
-        Linux (Ubuntu), Docker, Nginx, S3 
+        Linux (Ubuntu) Server Administration, Docker, Nginx, S3 
         \\
         \textbf{IT Project Management:}
         {UML},
@@ -188,21 +196,21 @@
         {Full-Stack Software Engineer}{2018 -- Present}
         \info{Design and development of custom-built software solutions for business. \href{https://blog.gordarg.com/en}{blog.gordarg.com/en}}
         \resumeItemListStart
-            \resumeItem{Launched the brand from ground up. Gathered a team of 5 engineers and served 50\textsuperscript{+} customers from various industries with software engineering and integration services. They were satisfied and honored the team with their recommendation letters.}
+            \resumeItem{Launched the brand from ground up. Gathered a team of 5 engineers and served \highlight{50\textsuperscript{+}} customers from various industries with software engineering and integration services. They were satisfied and honored the team with their recommendation letters.}
           \resumeItemListEnd
           
     \resumeSubheading
       {Zoomila}{Part-time On-site}
-      {Software Engineer \& Tech Lead}{February 2023 -- August 2023}
+      {Software Engineer}{February 2023 -- August 2023}
       \info{Leading real state property portal. \href{https://zoomila.com}{zoomila.com}}
       \resumeItemListStart
-        \resumeItem{Performed \href{https://tayyebi.medium.com/breaking-the-bad-transforming-monolithic-applications-to-containers-8a769af8cf26}{transformation and refactoring} of the main web application with thousands of users daily. This allowed the team to replace retired technologies. In the 6 months of the process, less than 10 downtimes were forced and the longest duration was only 15 minutes.}
+        \resumeItem{Performed \href{https://tayyebi.medium.com/breaking-the-bad-transforming-monolithic-applications-to-containers-8a769af8cf26}{transformation and refactoring} of the main \highlight{web application} with thousands of users daily. This allowed the team to replace retired technologies. In the 6 months of the process, less than 10 downtimes were forced and the longest duration was only 15 minutes.}
         \resumeItem{Configured Linux servers and managed migration and was responsible for reliability and accessibility. Wrote SH, SQL, and PHP scripts to discover abandoned software functions and database tables. }
         \resumeItemListEnd
         
     \resumeSubheading
-      {Universal Versatile Society (United Nations Volunteer)}{Remote}
-      {Web Developer}{June 2022 -- Present}
+      {Universal Versatile Society (United Nations \highlight[qanary, draw=cream]{Volunteer})}{Remote}
+      {Web Developer}{June 2022 -- December 2022}
       \info{UNEP and UNCCD accredited non governmental organization working for permaculture, mental health and education in India. \href{https://uvsociety.org}{uvsociety.org}}
       \resumeItemListStart
         \resumeItem{Collaborated with a team of 12 volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers based on a multi-tier RESTful architecture.}
@@ -214,16 +222,16 @@
       {Software Developer}{January 2018 -- January 2023}
       \info{Designer and manufacturer of security seals. \href{http://en.plompin.com}{plompin.com}}
       \resumeItemListStart
-        \resumeItem{Redesigned and maintained a network-based desktop application for 4 manufacturing and 2 packaging lines in a company allowing them to track each of 1 million pieces of industrial seals per month from assembly to packaging. This software has been under a heavy load for more than 5 years handling high-frequency transactions and real-time monitoring reports using Microsoft SQL Server.}
+        \resumeItem{Redesigned and maintained a network-based \highlight{desktop application} for 4 manufacturing and 2 packaging lines in a company allowing them to track each of 1 million pieces of industrial seals per month from assembly to packaging. This software has been under a heavy load for more than 5 years handling high-frequency transactions and real-time monitoring reports using Microsoft SQL Server.}
         \resumeItemListEnd
 
     \resumeSubheading
       {Hamtire}{Full-time On-site}
-      {Software Developer \& Project Manager}{Jun 2022 -- Dec 2022}
+      {Software Developer \& Project Manager}{June 2022 -- December 2022}
       \info{Hamtire is a B2B market-place owned by "Tokan Tav Tejarat", a trading company. \href{https://hamtire.com}{hamtire.com}}
       \resumeItemListStart
         \resumeItem{Developed a Laravel API and scaffolding scripts which were implemented as a base to develop features needed by a marketplace focused on online sales of tires and wheels. }
-        \resumeItem{Led a team containing a front-end Ionic-ReactJS developer, front-end web developer, back-end PHP developer, SEO specialist, and content managers. Was responsible for task delegation, cost management, and product market fit.}
+        \resumeItem{\highlight{Coached} a team containing a front-end Ionic-ReactJS developer, front-end web developer, back-end PHP developer, SEO specialist, and content managers. Was responsible for task delegation, cost management, and product market fit.}
         \resumeItemListEnd
 
     \resumeSubheading
@@ -239,7 +247,7 @@
       {Software Developer}{2019 -- 2021}
       \info{The first Internet Service Provider (ISP) in west of Iran, which holds several IoT projects as well. \href{https://atinet.ir}{atinet.ir}}
       \resumeItemListStart
-        \resumeItem{Developed a server-side software for storing and forwarding hundreds of thousands of network requests per day from hundreds of sensors with MySQL, PHP, and GoLang. The software has been functioning under heavy load since 2019 without any major change with almost no incidents from the release day on.}
+        \resumeItem{Developed a server-side software (\highlight{IoT}) for storing and forwarding hundreds of thousands of network requests per day from hundreds of sensors with MySQL, PHP, and GoLang. The software has been functioning under heavy load since 2019 without any major change with \highlight{almost no incidents} from the release day on.}
         \resumeItemListEnd
       
     \resumeSubheading
@@ -247,11 +255,17 @@
       {Guest Lecturer}{2018 -- 2020}
       \info{Consisting 13 faculties in 6 campuses, this university enrolls 10 to 15 thousand students due to uniRank.}
       \resumeItemListStart
-        \resumeItem{Instructed the \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop and \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC}} crash course at \emph{Scientific Society of Computer Science and Engineering} to familiarize students with industry standards. }
+        \resumeItem{Instructed the \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop and \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC}} crash course at \emph{Scientific Society of Computer Science and Engineering} to familiarize students with \highlight{industry standards}. }
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
+%-----------PROJECTS-----------
+% \section{Projects}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{SF2} $|$ ... \emph{2023}.}{\href{2}{\deemph{ID} \small{ARJ...T0}}}
+%   \resumeSubHeadingListEnd
   
 %-----------EDUCATION-----------
 \section{Education}
@@ -269,12 +283,12 @@
       \resumeProjectHeading
           {\textbf{WorldSkills 2017 Abu-Dhabi} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{}
           \resumeItemListStart
-            \resumeItem{4 days of challenging web, desktop, and mobile programming, data architecture, and software analysis in the world's largest skills competition welcoming tens of talented youth professionals from different countries.}
+            \resumeItem{4 days of challenging web, desktop, and mobile programming, data architecture, and software analysis in the \highlight{world's largest} skills competition welcoming tens of talented youth professionals from different countries.}
           \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{}
           \resumeItemListStart
-            \resumeItem{Implemented a centralized authentication and authorization software, and was honored to get a place among 45 awarded students out of 25339 (top \(\frac{1}{10}\)\%) in the most creditable scientific festival of the nation, at the age of 17.}
+            \resumeItem{Implemented a centralized authentication and authorization software, and was honored to get a place among 45 awarded students out of 25339 (top \(\frac{1}{10}\)\%) in the \highlight{most creditable} scientific festival of the nation, at the age of 17.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
@@ -296,11 +310,10 @@
           {\textbf{Business Process Modeling} $|$ PMI -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/3d1e244d9234631a908175486d19855434634d7f61cec316326ba4eb269bb041}{\deemph{ID} \small{AfY...oc}}}
       \resumeProjectHeading
           {\textbf{Business Analysis Foundations} $|$ IIBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/51dd265ef63b58255245c8f7438549551c92d30031e81b9ad864ee6994e1f6e6}{\deemph{ID} \small{ASh...Et}}}
-          
-    %   \resumeProjectHeading
-    %       {\textbf{Certified Instructor} $|$ TVTO; \emph{2015}.}{\deemph{Contract No.} 5243\, 96/30\_475616/2}
-    % \resumeProjectHeading
-    %       {\textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{2013}.}{\deemph{No.} 90163030986}
+       \resumeProjectHeading
+           {\textbf{Certified Instructor} $|$ TVTO; \emph{2015}.}{\deemph{Contract No.} 5243\, 96/30\_475616/2}
+     \resumeProjectHeading
+           {\textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{\highlight{2013}}.}{\deemph{No.} 90163030986}
 
     \resumeSubHeadingListEnd
 
