@@ -11,5 +11,3 @@
 ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 ![MinIO](https://img.shields.io/badge/MinIO-000000?style=for-the-badge&logo=minio&logoColor=white)
-
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=tayyebi&show_icons=true&locale=en&layout=compact" alt="tayyebi" /></p>
