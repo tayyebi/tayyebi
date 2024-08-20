@@ -1,6 +1,5 @@
 <p style="text-align: center; margin: 0 auto; display: block; width: 100%;"><img style="max-width: 435px; display: block; margin: 0 auto;" src="https://github.com/tayyebi/IranianGraphicalElements/raw/master/yazd.svg" /></p>
 
-![Proxmox](https://img.shields.io/badge/-Proxmox-3a464b?style=for-the-badge&logo=Proxmox)
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)
