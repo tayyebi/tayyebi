@@ -14,11 +14,3 @@
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 ![Amazon S3](https://img.shields.io/badge/amazon%20s3-52b5f7?style=for-the-badge&logo=amazon%20s3&logoColor=white)
-
-## Example Bash script
-
-This repository includes a small example Bash script at scripts/hello.sh. To run it:
-
-```bash
-bash scripts/hello.sh
-```
