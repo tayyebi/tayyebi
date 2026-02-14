@@ -1,5 +1,8 @@
 <p style="text-align: center; margin: 0 auto; display: block; width: 100%;"><img style="max-width: 435px; display: block; margin: 0 auto;" src="https://github.com/tayyebi/IranianGraphicalElements/raw/master/yazd.svg" /></p>
 
+[<img src="https://img.shields.io/badge/-Bash-4EAA25?logo=gnu-bash&amp;logoColor=white&amp;style=flat">]()
+[<img src="https://img.shields.io/badge/-Rust-black?logo=rust&amp;logoColor=white&amp;style=flat">]()
+
 ![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 ![Debian](https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white)
@@ -11,3 +14,11 @@
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
 ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 ![Amazon S3](https://img.shields.io/badge/amazon%20s3-52b5f7?style=for-the-badge&logo=amazon%20s3&logoColor=white)
+
+## Example Bash script
+
+This repository includes a small example Bash script at scripts/hello.sh. To run it:
+
+```bash
+bash scripts/hello.sh
+```
