@@ -106,14 +106,10 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{4pt}\item
       \textbf{#1} \small\deemph{#2}
       \textit{\small #3} \hfill \textit{\small\deemph{\textcolor{marineblue}{#4}}}
     \vspace{0pt}
-    %\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    %   \textbf{#1} & \small\deemph{#2} \\
-    %   \textit{\small#3} & \textit{\small\deemph{#4}} \\
-    % \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -124,15 +120,17 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+    \vspace{-6pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \deemph{#2} \\
-    \end{tabular*}\vspace{-7pt}
+      \footnotesize#1 & \footnotesize\deemph{#2} \\
+    \end{tabular*}\vspace{-9pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemiii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemiv{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -161,7 +159,7 @@
 
 
 \begin{tikzpicture}[remember picture,overlay,shift={(current page.north east)}]
-\node[anchor=north east,xshift=-1cm,yshift=-0.5cm]{\includegraphics[scale=0.70]{pic.png}};
+\node[anchor=north east,xshift=-1cm,yshift=-0.5cm]{\includegraphics[scale=0.56]{pic.png}};
 \end{tikzpicture}
 
 % \begin{justify}
@@ -323,6 +321,6 @@
 \vfill
 \leavevmode
 \tiny
-\deemph{Some of the organizations and media, also wrote ‘Tayyebi’ as ‘Tayebi’ / ‘Mohammad’ as ‘Mohamad’ / ‘..dReza’ as ‘..d Reza’ which are also accepted.}
+\deemph{Some of the organizations and media, also wrote 'Tayyebi' as 'Tayebi' / 'Mohammad' as 'Mohamad' / '..dReza' as '..d Reza' which are also accepted.}
 
 \end{document}
