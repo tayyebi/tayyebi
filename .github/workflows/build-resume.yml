@@ -1,0 +1,28 @@
+name: Build Resume PDF
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: latex
+
+      - name: Move PDF to repo root
+        run: mv latex/resume.pdf resume.pdf
+
+      - name: Commit updated resume.pdf
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ci: update resume.pdf [skip ci]"
+          file_pattern: resume.pdf
