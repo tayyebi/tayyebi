@@ -73,10 +73,11 @@
 \raggedright
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting
+% Sections formatting — titlespacing controls above/below space without negative values
 \titleformat{\section}{
-  \vspace{2pt}\raggedright\large\color{ultramarine}
-}{}{0em}{}[\color{marineblue}\titlerule \vspace{0pt}]
+  \raggedright\large\color{ultramarine}
+}{}{0em}{}[\color{marineblue}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -92,46 +93,45 @@
         \hspace{0.15in}
          #1
      }
-     \vspace{0pt}
 }
 
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{0pt}}
-  }
+  \item\small{#1}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{4pt}\item
+  \item
       \textbf{#1} \small\deemph{#2}
       \textit{\small #3} \hfill \textit{\small\deemph{\textcolor{marineblue}{#4}}}
-    \vspace{0pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{0pt}
+    \end{tabular*}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{0pt}\item
+    \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \footnotesize#1 & \footnotesize\deemph{#2} \\
-    \end{tabular*}\vspace{0pt}
+    \end{tabular*}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemiii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemiv{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+% Use enumitem spacing parameters (topsep/itemsep/parsep) instead of \vspace hacks
+\newcommand{\resumeSubHeadingListStart}{%
+  \begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, itemsep=3pt, parsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+\newcommand{\resumeItemListStart}{%
+  \begin{itemize}[topsep=1pt, itemsep=1pt, parsep=0pt, leftmargin=*]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
 
 %-------------------------------------------
 
@@ -157,7 +157,7 @@
     \includegraphics[scale=0.56]{pic.png}
 \end{minipage}
 
-\vspace{4pt}
+\vspace{2pt}
 
 %-----------SKILLS-----------
 \section{Skills}
