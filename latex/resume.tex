@@ -77,7 +77,7 @@
 \titleformat{\section}{
   \raggedright\large\color{ultramarine}
 }{}{0em}{}[\color{marineblue}\titlerule]
-\titlespacing*{\section}{0pt}{6pt}{3pt}
+\titlespacing*{\section}{0pt}{14pt}{8pt}
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -127,10 +127,13 @@
 
 % Use enumitem spacing parameters (topsep/itemsep/parsep) instead of \vspace hacks
 \newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, itemsep=3pt, parsep=0pt]}
+  \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=3pt, parsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+% Inner list for project headings — tighter, no extra gap between heading and bullets
+\newcommand{\resumeProjectHeadingListStart}{%
+  \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, partopsep=0pt, itemsep=1pt, parsep=0pt]}
 \newcommand{\resumeItemListStart}{%
-  \begin{itemize}[topsep=1pt, itemsep=1pt, parsep=0pt, leftmargin=*]}
+  \begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=1pt, parsep=0pt, leftmargin=*]}
 \newcommand{\resumeItemListEnd}{\end{itemize}}
 
 %-------------------------------------------
@@ -141,7 +144,7 @@
 %----------HEADER-----------
 % Photo and contact info side by side using minipages (no tikz overlay needed)
 \noindent
-\begin{minipage}[t]{0.72\textwidth}
+\begin{minipage}[c]{0.72\textwidth}
     \textbf{\textcolor{ultramarine}{\Large MohammadReza Tayebi}}
     \\
     \textbf{Software Engineer}
@@ -152,7 +155,7 @@
     \small\href{https://github.com/tayyebi}{github.com/tayyebi}
     \small\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}
 \end{minipage}%
-\begin{minipage}[t]{0.28\textwidth}
+\begin{minipage}[c]{0.28\textwidth}
     \raggedleft
     \includegraphics[scale=0.56]{pic.png}
 \end{minipage}
@@ -184,7 +187,7 @@
         {Cloudzy.com}{}
         {Full-Stack Software Developer}{Nov, 2024 -- Present}
         \info{VPS Provider since 2008. \href{https://www.linkedin.com/company/cloudzyvps/}{in/co/cloudzyvps}}
-        \resumeSubHeadingListStart
+        \resumeProjectHeadingListStart
             \resumeProjectHeading{\textbf{Billing System}}{}
             \resumeItemListStart
                 \resumeItem{Improved backend reliability across API gateways and bare-metal agents via refactoring and architectural cleanup}
