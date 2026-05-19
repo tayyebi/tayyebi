@@ -1,312 +1,265 @@
 %-------------------------
-% Resume in Latex (Edited with Overleaf)
-% Author: Mohammad R. Tayyebi
-% License: MIT
+% Resume in LaTeX — final version
+% - dates inline with organization name
+% - position title shown before organization tagline (role appears after org+date)
+% - left-aligned text (no justification)
+% - image vertically centered with header block
+% - "de-engineering" highlighted
+% - footer centered at bottom with two lines (note + update date)
+% Content: Mohammad R. Tayyebi
+% Page numbers removed
 %------------------------
 
 \documentclass[11pt,a4paper]{article}
 
-\linespread{1.25}
+% ENCODING & MICRO-TYPOS
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
 
-\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{ragged2e}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{hyperref}
-\usepackage{fontawesome} % based on https://mirrors.ibiblio.org/CTAN/fonts/fontawesome/doc/fontawesome.pdf
+% LAYOUT (slightly increased top padding)
+\usepackage[a4paper, left=0.3in, right=0.3in, top=0.4in, bottom=0.6in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.25} % base line spacing
+
+% Preserve original highlight and unicode helpers (must exist in project)
 \input{highlight.tex}
-
 \input{glyphtounicode}
 
-%----------FONT OPTIONS----------
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
+% FONTS (preserve original choices)
 \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% \usepackage{tgadventor}
-% \renewcommand*\familydefault{\sfdefault}
-% \usepackage[T1]{fontenc}
-
 \usepackage{CormorantGaramond}
 \usepackage{charter}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+% MINIMAL PACKAGES
+\usepackage{graphicx}   % images
+\usepackage{xcolor}     % colors
+\usepackage{titlesec}   % section spacing
+\usepackage{enumitem}   % list control
+\usepackage[hidelinks]{hyperref} % links
+\usepackage{fontawesome} % hyperlink icon
 
-% Adjust margins via geometry (replaces manual \addtolength calls with negative values)
-\usepackage[a4paper, left=0.5in, right=0.5in, top=0.5in, bottom=1in]{geometry}
-
-\definecolor{carminered}{rgb}{1.0, 0.0, 0.22} % https://latexcolor.com/
-\definecolor{heritagered}{RGB}{147, 19, 20}
+% COLORS & PAGE
 \definecolor{ultramarine}{RGB}{0,32,96}
-\definecolor{marineblue}{RGB}{9, 129, 209}
+\definecolor{marineblue}{RGB}{9,129,209}
+\definecolor{heritagered}{RGB}{147,19,20}
 \definecolor{qanary}{HTML}{ffdc2a}
 \definecolor{cream}{HTML}{fefdfc}
-
 \pagecolor{cream}
 
-\urlstyle{same}
-\hypersetup{
-  colorlinks=false,
-  linkcolor=ultramarine,
-  urlcolor=ultramarine
-}
+% HYPERLINK ICON (preserve original behavior)
 \let\orighref\href
 \renewcommand{\href}[2]{\orighref{#1}{#2\,{\textsuperscript{\tiny{\textcolor{heritagered}{\faExternalLink}}}}}}
 
-
-\raggedbottom
-\raggedright
+% TABULAR / TABLE SETTINGS
 \setlength{\tabcolsep}{0in}
 
-% Sections formatting — titlespacing controls above/below space without negative values
-\titleformat{\section}{
-  \raggedright\large\color{ultramarine}
-}{}{0em}{}[\color{marineblue}\titlerule]
-\titlespacing*{\section}{0pt}{14pt}{8pt}
+% HEADER/FOOTER GAP TWEAKS
+\setlength{\headheight}{12pt}
+\setlength{\headsep}{6pt}
+\setlength{\footskip}{12pt}
 
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+% CONFIGURABLE SPACING VARIABLES
+\newlength{\ListLeftMargin}   \setlength{\ListLeftMargin}{0.15in}
+\newlength{\ListTopSep}      \setlength{\ListTopSep}{0pt}
+\newlength{\ListItemSep}     \setlength{\ListItemSep}{3pt}
+\newlength{\ListParsep}      \setlength{\ListParsep}{0pt}
 
-%-------------------------
-% Custom commands
+\newlength{\ProjectTopSep}   \setlength{\ProjectTopSep}{1pt}
+\newlength{\ProjectItemSep}  \setlength{\ProjectItemSep}{1pt}
+
+\newlength{\SectionBefore}   \setlength{\SectionBefore}{8pt}
+\newlength{\SectionAfter}    \setlength{\SectionAfter}{8pt}
+
+% Apply list settings globally (can be overridden locally)
+\setlist[itemize]{leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep}
+
+% Section spacing
+\titleformat{\section}{\raggedright\large\color{ultramarine}}{}{0em}{}[\color{marineblue}\titlerule]
+\titlespacing*{\section}{0pt}{\SectionBefore}{\SectionAfter}
+
+% small helper for deemphasis
 \newcommand{\deemph}[1]{{\color{gray}#1}}
 
-\newcommand{\info}[1]{
-    \\
-    \deemph{
-        \faInfoCircle
-        \hspace{0.15in}
-         #1
-     }
+% MACROS FOR STRUCTURE
+\newcommand{\ResumeName}[1]{\noindent{\Large\bfseries\textcolor{ultramarine}{#1}}}
+\newcommand{\ResumeRole}[1]{\noindent{\bfseries #1}}
+\newcommand{\ContactLine}[1]{\noindent\small#1}
+
+% New reusable macros to keep repeating elements consistent:
+% OrgLine prints organization tagline on the left and date on the right (inline).
+% ProjHeading prints a project heading inside ProjectBlock without a leading bullet.
+\newcommand{\OrgLine}[2]{%
+  \noindent\small\deemph{#1} \hfill \textit{\small\deemph{\textcolor{marineblue}{#2}}}%
 }
 
-\newcommand{\resumeItem}[1]{
-  \item\small{#1}
+\newcommand{\ProjHeading}[1]{%
+  \item \textbf{#1}%
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \item
-      \textbf{#1} \small\deemph{#2}
-      \textit{\small #3} \hfill \textit{\small\deemph{\textcolor{marineblue}{#4}}}
+% ProjectBlock: no bullet for each project heading, inner lists keep bullets
+\newenvironment{ProjectBlock}{%
+  \begin{itemize}[leftmargin=\ListLeftMargin, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label={}]
+}{%
+  \end{itemize}
 }
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}
+% PositionHeader: prints company name with date inline (same line), then position (role),
+% then organization tagline below. This places dates inline with organization name.
+\newcommand{\PositionHeader}[4]{%
+  \vspace{2pt}%
+  \noindent\textbf{#1} \hfill \textit{\small\deemph{\textcolor{marineblue}{#4}}} \\% Org name left, date right (inline)
+  \noindent\textit{\small #3} \\% Position title (role) appears after org+date
+  \noindent\small\deemph{#2}%
+  \vspace{4pt}%
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \footnotesize#1 & \footnotesize\deemph{#2} \\
-    \end{tabular*}
-}
+% Remove page numbers
+\pagenumbering{gobble}
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemiii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemiv{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-% Use enumitem spacing parameters (topsep/itemsep/parsep) instead of \vspace hacks
-\newcommand{\resumeSubHeadingListStart}{%
-  \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, itemsep=3pt, parsep=0pt]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-% Inner list for project headings — tighter, no extra gap between heading and bullets
-\newcommand{\resumeProjectHeadingListStart}{%
-  \begin{itemize}[leftmargin=0.15in, label={}, topsep=0pt, partopsep=0pt, itemsep=1pt, parsep=0pt]}
-\newcommand{\resumeItemListStart}{%
-  \begin{itemize}[topsep=0pt, partopsep=0pt, itemsep=1pt, parsep=0pt, leftmargin=*]}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
-
-%-------------------------------------------
-
+% DOCUMENT
 \begin{document}
-\graphicspath{ {./img} }
+\raggedright % ensure left-aligned text (no full justification)
+\graphicspath{{./img}}
 
-%----------HEADER-----------
-% Photo and contact info side by side using minipages (no tikz overlay needed)
+\vspace*{6pt} % small extra top padding
+
+% HEADER: left text and image vertically centered relative to each other
 \noindent
 \begin{minipage}[c]{0.72\textwidth}
-    \textbf{\textcolor{ultramarine}{\Large MohammadReza Tayebi}}
-    \\
-    \textbf{Software Engineer}
-    \\
-    \small\href{tel:+989120982276}{(+98) 912 - 098 2276}
-    \small\href{mailto:m@tyyi.net}{m@tyyi.net}
-    \\
-    \small\href{https://github.com/tayyebi}{github.com/tayyebi}
-    \small\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}
+  \ResumeName{MohammadReza Tayebi} \\
+  \ResumeRole{Software Engineer} \\
+  \ContactLine{\href{tel:+989120982276}{(+98) 912 - 098 2276} \quad \href{mailto:m@tyyi.net}{m@tyyi.net}}\\
+  \ContactLine{\href{https://github.com/tayyebi}{github.com/tayyebi} \quad \href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}}
 \end{minipage}%
+\hfill
 \begin{minipage}[c]{0.28\textwidth}
-    \raggedleft
-    \includegraphics[scale=0.56]{pic.png}
+  \raggedleft
+  \includegraphics[scale=0.4928]{pic.png}
 \end{minipage}
 
-\vspace{2pt}
+\vspace{8pt}
 
-%-----------SKILLS-----------
+% SKILLS
 \section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \item {
-        \textbf{Software Development:}
-        C\#, PHP, Vanilla JS, CSS3, SQL Server, MySQL
-        \\
-        \textbf{DevOps:}
-        Linux (Debian/Ubuntu) Server Administration, Docker, Nginx, S3 
-        \\
-        \textbf{IT Project Management:}
-        {UML},
-        {Business Analysis},
-        {Multi-Criteria Decision Analysis (MCDA)}
-    }
-     
- \end{itemize}
+\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+  \item {
+    \textbf{Software Development:}
+    C\#, PHP, Vanilla JS, CSS3, SQL Server, MySQL
+    \\
+    \textbf{DevOps:}
+    Linux (Debian/Ubuntu) Server Administration, Docker, Nginx, S3
+    \\
+    \textbf{IT Project Management:}
+    UML, Business Analysis, Multi-Criteria Decision Analysis (MCDA)
+  }
+\end{itemize}
 
-% -----------EXPERIENCE-----------
+% EXPERIENCE
 \section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-        {Cloudzy.com}{}
-        {Full-Stack Software Developer}{Nov, 2024 -- Present}
-        \info{VPS Provider since 2008. \href{https://www.linkedin.com/company/cloudzyvps/}{in/co/cloudzyvps}}
-        \resumeProjectHeadingListStart
-            \resumeProjectHeading{\textbf{Billing System}}{}
-            \resumeItemListStart
-                \resumeItem{Improved backend reliability across API gateways and bare-metal agents via refactoring and architectural cleanup}
-                \resumeItem{Contributed to system design for a legacy software replacement, ensuring GDPR and IFRS compliance}
-            \resumeItemListEnd
-            \resumeProjectHeading{\textbf{Mailserver}}{}
-            \resumeItemListStart
-                \resumeItem{Architected and maintained a scalable email infrastructure with optimized cross-region multi-relay delivery; added observability for queue latency, bounce rates, and throughput using Grafana dashboards and a custom milter}
-                \resumeItem{Automated abuse processing and monitoring based on RFC 5965}
-            \resumeItemListEnd
-            \resumeProjectHeading{\textbf{WordPress Development}}{}
-            \resumeItemListStart
-                \resumeItem{Led migration and integration of multiple legacy static site generators into a single web application, coordinating with the deputy CEO, marketing lead, infrastructure lead, and project manager}
-                \resumeItem{Developed object-oriented WordPress plugins in PHP, created dynamic snippets to streamline workflows, and implemented custom Elementor widgets; consolidated tens of plugins into a single consistent solution}
-                \resumeItem{Implemented ``sunrise'' logic with an Elementor child theme and snippets for staging/production proxy rules, scaling, load balancing, and access control}
-                \resumeItem{Automated replication, data sync, and load balancing}
-                \resumeItem{Automated SEO tests using Google Apps Script}
-                \resumeItem{Trained compact models for comment spam detection}
-                \resumeItem{Built a single-binary optimizer to improve static files at the edge}
-            \resumeItemListEnd
-            \resumeProjectHeading{\textbf{Status Page}}{}
-            \resumeItemListStart
-                \resumeItem{Designed a multi-tenant architecture allowing tenants to define groups and services, with subscription options to expose services externally}
-                \resumeItem{Supported multiple protocols and conditional checks for service monitoring and grouping}
-                \resumeItem{Implemented active-active, masterless application-level replication and multi-regional deployment for high availability, with auto-provisioning and zero-configuration}
-                \resumeItem{Built custom Cloudflare Workers to orchestrate traffic, load-balance across regions, and serve public status pages}
-            \resumeItemListEnd
-            \resumeProjectHeading{\textbf{General tasks}}{}
-            \resumeItemListStart
-                \resumeItem{Contributed to Cloudflare rules de-engineering; implemented multiple MVPs for a shared-hosting platform; Billing as a Service; Applicant Tracking System; Core Web Vitals monitoring; Live Chat + AI; Marketing Automation Platform; Developer CLI}
-            \resumeItemListEnd
-        \resumeSubHeadingListEnd
-    \resumeSubheading
-        {Arg Group (Gordarg.com)}{}
-        {Founder \& Software Engineer}{2018 -- 2024}
-        \info{Design and development of custom-built software solutions for business. \href{https://www.linkedin.com/company/gordarg/}{in/co/gordarg}}
-        \resumeItemListStart
-            \resumeItem{Initiated the brand from inception, assembling a team of three to five engineers to deliver software solutions and integration services to \highlight{50\textsuperscript{+}} clients across various industries.}
-            \resumeItem{\href{https://gordarg.com}{Gordarg.com} oversees subsidiaries such as data aggregation service and some mobile applications, all of which are accessible through our website.}
-            \resumeItem{Highlighted below are some of the key projects where personal contributions were particularly significant and were recognized through numerous recommendation letters from satisfied customers.}
-          \resumeItemListEnd
-  \resumeSubHeadingListEnd
- 
-% -----------VOLUNTEER-----------
+
+\PositionHeader{Cloudzy.com}{VPS Provider since 2008. \href{https://www.linkedin.com/company/cloudzyvps/}{in/co/cloudzyvps}}{Full-Stack Software Developer}{Nov, 2024 -- Present}
+\begin{ProjectBlock}
+  \ProjHeading{Billing System}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Improved backend reliability across API gateways and bare-metal agents via refactoring and architectural cleanup
+      \item Contributed to system design for a legacy software replacement, ensuring GDPR and IFRS compliance
+    \end{itemize}
+
+  \ProjHeading{Mailserver}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Architected and maintained a scalable email infrastructure with optimized cross-region multi-relay delivery; added observability for queue latency, bounce rates, and throughput using Grafana dashboards and a custom milter
+      \item Automated abuse processing and monitoring based on RFC 5965
+    \end{itemize}
+
+  \ProjHeading{WordPress Development}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Led migration and integration of multiple legacy static site generators into a single web application, coordinating with the deputy CEO, marketing lead, infrastructure lead, and project manager
+      \item Developed object-oriented WordPress plugins in PHP, created dynamic snippets to streamline workflows, and implemented custom Elementor widgets; consolidated tens of plugins into a single consistent solution
+      \item Implemented ``sunrise'' logic with an Elementor child theme and snippets for staging/production proxy rules, scaling, load balancing, and access control
+      \item Automated SEO tests using Google Apps Script, and CI/CD for multi-regional replication; implemented tiny self-hosted comment spam detection system, and single-binary optimizer to improve static files at the edge
+    \end{itemize}
+
+  \ProjHeading{Status Page}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Designed a multi-tenant architecture allowing tenants to define groups and services, with subscription options to expose services externally
+      \item Supported multiple protocols and conditional checks for service monitoring and grouping
+      \item Implemented active-active, masterless application-level replication and multi-regional deployment for high availability, with auto-provisioning and zero-configuration
+      \item Built custom Cloudflare Workers to orchestrate traffic, load-balance across regions, and serve public status pages
+    \end{itemize}
+
+  \ProjHeading{General tasks}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Contributed to Cloudflare rules \highlight{de-engineering}; implemented multiple MVPs for a shared-hosting platform; Billing as a Service; Applicant Tracking System; Core Web Vitals monitoring; Live Chat + AI; Marketing Automation Platform; Developer CLI
+    \end{itemize}
+\end{ProjectBlock}
+
+\PositionHeader{Arg Group (Gordarg.com)}{Design and development of custom-built software solutions for business. \href{https://www.linkedin.com/company/gordarg/}{in/co/gordarg}}{Founder \& Software Engineer}{2018 -- 2024}
+\begin{itemize}[leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep]
+  \item Initiated the brand from inception, assembling a team of three to five engineers to deliver software solutions and integration services to \highlight[qanary, draw=cream]{50\textsuperscript{+}} clients across various industries.
+  \item \href{https://gordarg.com}{Gordarg.com} oversees subsidiaries such as data aggregation service and some mobile applications, all of which are accessible through our website.
+  \item Highlighted below are some of the key projects where personal contributions were particularly significant and were recognized through numerous recommendation letters from satisfied customers.
+\end{itemize}
+
+% VOLUNTEER
 \section{Volunteer}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Universal Versatile Society (\highlight[qanary, draw=cream]{United Nations} Volunteer)}{Remote}
-      {Web Developer}{June 2022 -- December 2022}
-      \info{UNEP and UNCCD accredited non governmental organization working for permaculture, mental health and education in India. \href{https://uvsociety.org}{uvsociety.org}}
-      \resumeItemListStart
-        \resumeItem{Collaborated with a team of 12 volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers based on a multi-tier RESTful architecture.}
-        \resumeItem{Configured a WordPress/WooCommerce application behind a Dockerized Nginx Reverse Proxy, as a temporary solution.}
-      \resumeItemListEnd
 
-    \resumeSubheading
-      {Bu-Ali Sina University}{On-site}
-      {Guest Lecturer}{2018 -- 2020}
-      \info{Consisting 13 faculties in 6 campuses, this university enrolls 10 to 15 thousand students due to uniRank.}
-      \resumeItemListStart
-        \resumeItem{Instructed the \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop and \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC}} crash course at \emph{Scientific Society of Computer Science and Engineering} to familiarize students with \highlight{industry standards}. }
-      \resumeItemListEnd
+\PositionHeader{\highlight{United Nations} Volunteer}{UNEP and UNCCD accredited non governmental organization working for permaculture, mental health and education in India. \href{https://uvsociety.org}{uvsociety.org}}{Web Developer}{June 2022 -- December 2022}
+\begin{itemize}[leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep]
+  \item Collaborated with a team of 12 volunteers from different countries and time zones to create a multi-vendor marketplace for Indian farmers based on a multi-tier RESTful architecture.
+  \item Configured a WordPress/WooCommerce application behind a Dockerized Nginx Reverse Proxy, as a temporary solution.
+\end{itemize}
 
-  \resumeSubHeadingListEnd
-  
-%-----------EDUCATION-----------
+\PositionHeader{Bu-Ali Sina University}{Design and delivery of workshops and crash courses at the Scientific Society of Computer Science and Engineering.}{Guest Lecturer}{2018 -- 2020}
+\begin{itemize}[leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep]
+  \item Instructed the \href{https://github.com/tayyebi/BASU-Full-Stack-98}{\emph{Full-stack developer}} workshop and \href{https://github.com/tayyebi/BASU-MVC-99}{\emph{Advanced MVC}} crash course to familiarize students with industry standards.
+\end{itemize}
+
+% EDUCATION
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {MBA}{}{Khaje Nasir Toosi University of Technology}{September 2021 -- May 2023}
-    \resumeSubheading
-      {Bachelor of Science in Computer Engineering}{}{Bu-Ali Sina University}
-      {September 2016 -- August 2021}
-  \resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+  \item \textbf{MBA} \hfill Khaje Nasir Toosi University of Technology \hfill September 2021 -- May 2023
+  \item \textbf{Bachelor of Science in Computer Engineering} \hfill Bu-Ali Sina University \hfill September 2016 -- August 2021
+\end{itemize}
 
-%-----------AWARDS-----------
+% HONORS & AWARDS
 \section{Honors \& Awards}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{WorldSkills 2017 Abu-Dhabi} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}}{}
-          \resumeItemListStart
-            \resumeItem{4 days of challenging web, desktop, and mobile programming, data architecture, and software analysis in the \highlight{world's largest} skills competition welcoming tens of talented youth professionals from different countries.}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}}{}
-          \resumeItemListStart
-            \resumeItem{Implemented a centralized authentication and authorization software, and was honored to get a place among 45 awarded students out of 25339 (top \(\frac{1}{10}\)\%) in the \highlight{most creditable} scientific festival of the nation, at the age of 17.}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+  \item \textbf{WorldSkills 2017 Abu-Dhabi} $|$ \href{https://www.credly.com/badges/4333ef3c-2cf8-43f3-a102-33ffb50ba6f2/public_url}{\emph{Champion}}, \emph{National Gold Medalist}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item 4 days of challenging web, desktop, and mobile programming, data architecture, and software analysis in the \highlight{world's largest} skills competition welcoming tens of talented youth professionals from different countries.
+    \end{itemize}
 
-%-----------CERTIFICATIONS-----------
+  \item \textbf{Khwarizmi Youth Award 2015} $|$ \emph{National Ranked 3\textsuperscript{rd}}
+    \begin{itemize}[leftmargin=*, topsep=\ProjectTopSep, itemsep=\ProjectItemSep, parsep=0pt, label=\textbullet]
+      \item Implemented a centralized authentication and authorization software, and was honored to get a place among 45 awarded students out of 25339 (top \(\frac{1}{10}\)\%) in the \highlight{most creditable} scientific festival of the nation, at the age of 17.
+    \end{itemize}
+\end{itemize}
+
+% CERTIFICATIONS
 \section{Certifications}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Data Analytics: Foundations} $|$ NASBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/10c24841aac6b0c139f4971a8efd6d10356dc105124e31fa10eb32aa14ce3392}{\deemph{ID} \small{ARJ...T0}}}
-      \resumeProjectHeading
-          {\textbf{Business Process Modeling} $|$ PMI -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/3d1e244d9234631a908175486d19855434634d7f61cec316326ba4eb269bb041}{\deemph{ID} \small{AfY...oc}}}
-      \resumeProjectHeading
-          {\textbf{Business Analysis Foundations} $|$ IIBA -- LinkedIn Learning; \emph{2023}.}{\href{https://www.linkedin.com/learning/certificates/51dd265ef63b58255245c8f7438549551c92d30031e81b9ad864ee6994e1f6e6}{\deemph{ID} \small{ASh...Et}}}
-       \resumeProjectHeading
-           {\textbf{Certified Instructor} $|$ TVTO; \emph{2015}.}{\deemph{Contract No.} 5243\, 96/30\_475616/2}
-     \resumeProjectHeading
-           {\textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{\highlight{2013}}.}{\deemph{No.} 90163030986}
+\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+  \item \textbf{Data Analytics: Foundations} $|$ NASBA -- LinkedIn Learning; \emph{2023}. \href{https://www.linkedin.com/learning/certificates/10c24841aac6b0c139f4971a8efd6d10356dc105124e31fa10eb32aa14ce3392}{\deemph{ID} \small{ARJ...T0}}
+  \item \textbf{Business Process Modeling} $|$ PMI -- LinkedIn Learning; \emph{2023}. \href{https://www.linkedin.com/learning/certificates/3d1e244d9234631a908175486d19855434634d7f61cec316326ba4eb269bb041}{\deemph{ID} \small{AfY...oc}}
+  \item \textbf{Business Analysis Foundations} $|$ IIBA -- LinkedIn Learning; \emph{2023}. \href{https://www.linkedin.com/learning/certificates/51dd265ef63b58255245c8f7438549551c92d30031e81b9ad864ee6994e1f6e6}{\deemph{ID} \small{ASh...Et}}
+  \item \textbf{Certified Instructor} $|$ TVTO; \emph{2015}. \deemph{Contract No.} 5243\, 96/30\_475616/2
+  \item \textbf{Enterprise Web Development with ASP.NET} $|$ TVTO; \emph{2013}. \deemph{No.} 90163030986
+\end{itemize}
 
-    \resumeSubHeadingListEnd
-
-%-----------NOTES-----------
+% NOTES
 \section{Notes}
-    \resumeSubHeadingListStart
+\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+  \item \textbf{Languages} $|$ Persian, English (C1), German (A2)
+  \item \textbf{Hobbies} $|$ Music Performance, Cycling, Night Sky Observation, Robotics
+\end{itemize}
 
-      \resumeProjectHeading{\textbf{Languages} $|$ Persian, English (C1), German (A2)}{}
-      \resumeProjectHeading{\textbf{Hobbies} $|$ Music Performance, Cycling, Night Sky Observation, Robotics}{}
-      
-    \resumeSubHeadingListEnd        
-
-\mbox{}
+% FOOTER NOTE centered at bottom with two lines
 \vfill
-\leavevmode
-\tiny
-\deemph{Some of the organizations and media, also wrote 'Tayyebi' as 'Tayebi' / 'Mohammad' as 'Mohamad' / '..dReza' as '..d Reza' which are also accepted.}
+\begin{center}
+  \tiny
+  \deemph{Some of the organizations and media also wrote 'Tayyebi' as 'Tayebi' / 'Mohammad' as 'Mohamad' / '..dReza' as '..d Reza' which are also accepted.} \\
+  \deemph{Updated May 19th, 2026.}
+\end{center}
 
 \end{document}
