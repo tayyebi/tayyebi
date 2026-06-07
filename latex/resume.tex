@@ -10,7 +10,7 @@
 % Page numbers removed
 %------------------------
 
-\documentclass[11pt,a4paper]{article}
+\documentclass[9pt,a4paper]{article}
 
 % ENCODING & MICRO-TYPOS
 \usepackage[T1]{fontenc}
@@ -125,39 +125,38 @@
 
 \vspace*{6pt} % small extra top padding
 
-% HEADER: left text and image vertically centered relative to each other
+% HEADER: three columns — contact info | skills | photo
 \noindent
-\begin{minipage}[c]{0.72\textwidth}
+\begin{minipage}[t]{0.38\textwidth}
   \ResumeName{MohammadReza Tayebi} \\
   \ResumeRole{Software Engineer} \\
-  \ContactLine{\href{tel:+989120982276}{(+98) 912 - 098 2276} \quad \href{mailto:m@tyyi.net}{m@tyyi.net}}\\
+  \ContactLine{\href{tel:+989120982276}{(+98) 912 - 098 2276} \quad \href{mailto:tayyebimohammadreza@gmail.com}{tayyebimohammadreza@gmail.com}}\\
   \ContactLine{\href{https://github.com/tayyebi}{github.com/tayyebi} \quad \href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}}
 \end{minipage}%
 \hfill
-\begin{minipage}[c]{0.28\textwidth}
+\begin{minipage}[t]{0.48\textwidth}
+  \section{Skills}
+  \begin{itemize}[leftmargin=\ListLeftMargin, label={}]
+    \item {
+      \textbf{Core Proficiencies:}
+      C\#, PHP, Git
+      \\
+      \textbf{AI-Assisted Development:}
+      TypeScript, Node.js, React
+      \\
+      \textbf{DevOps \& Infrastructure:}
+      Linux (Debian), Docker, Nginx, AWS S3, CI/CD
+      \\
+      \textbf{IT Project Management:}
+      UML, Business Analysis, MCDA, Waterfall Methodology
+    }
+  \end{itemize}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.10\textwidth}
   \raggedleft
-  \includegraphics[scale=0.4928]{pic.png}
+  \includegraphics[width=\linewidth]{pic.png}
 \end{minipage}
-
-\vspace{8pt}
-
-% SKILLS
-\section{Skills}
-\begin{itemize}[leftmargin=\ListLeftMargin, label={}]
-  \item {
-    \textbf{Core Proficiencies:}
-    C\#, PHP, Git
-    \\
-    \textbf{AI-Assisted Development:}
-    TypeScript, Node.js, React
-    \\
-    \textbf{DevOps \& Infrastructure:}
-    Linux (Debian), Docker, Nginx, AWS S3, CI/CD
-    \\
-    \textbf{IT Project Management:}
-    UML, Business Analysis, MCDA, Waterfall Methodology
-  }
-\end{itemize}
 
 % EXPERIENCE
 \section{Experience}
@@ -203,6 +202,14 @@
   \item Initiated the brand from inception, assembling a team of three to five engineers to deliver software solutions and integration services to \highlight[qanary, draw=cream]{50\textsuperscript{+}} clients across various industries.
   \item \href{https://gordarg.com}{Gordarg.com} oversees subsidiaries such as data aggregation service and some mobile applications, all of which are accessible through our website.
   \item Highlighted below are some of the key projects where personal contributions were particularly significant and were recognized through numerous recommendation letters from satisfied customers.
+\end{itemize}
+
+\vspace{2pt}
+\noindent\textbf{Previous Experiences}
+\begin{itemize}[leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep]
+  \item Back-end Developer at Mr Bilit Group
+  \item CTO at Tokan Tav Tejarat
+  \item Site Reliability Engineer at Zoomila.com
 \end{itemize}
 
 % VOLUNTEER
