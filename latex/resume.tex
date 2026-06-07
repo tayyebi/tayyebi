@@ -18,7 +18,7 @@
 \usepackage{microtype}
 
 % LAYOUT (slightly increased top padding)
-\usepackage[a4paper, left=0.3in, right=0.3in, top=0.4in, bottom=0.6in]{geometry}
+\usepackage[a4paper, left=0.15in, right=0.15in, top=0.2in, bottom=0.3in]{geometry}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \linespread{1.25} % base line spacing
@@ -76,7 +76,7 @@
 \setlist[itemize]{leftmargin=\ListLeftMargin, topsep=\ListTopSep, itemsep=\ListItemSep, parsep=\ListParsep}
 
 % Section spacing
-\titleformat{\section}{\raggedright\large\color{ultramarine}}{}{0em}{}[\color{marineblue}\titlerule]
+\titleformat{\section}{\raggedright\normalsize\color{ultramarine}}{}{0em}{}[\color{marineblue}\titlerule]
 \titlespacing*{\section}{0pt}{\SectionBefore}{\SectionAfter}
 
 % small helper for deemphasis
@@ -125,16 +125,19 @@
 
 \vspace*{6pt} % small extra top padding
 
-% HEADER: three columns — contact info | skills | photo
+% HEADER: two columns — contact info | skills
 \noindent
 \begin{minipage}[t]{0.38\textwidth}
   \ResumeName{MohammadReza Tayebi} \\
   \ResumeRole{Software Engineer} \\
-  \ContactLine{\href{tel:+989120982276}{(+98) 912 - 098 2276} \quad \href{mailto:tayyebimohammadreza@gmail.com}{tayyebimohammadreza@gmail.com}}\\
-  \ContactLine{\href{https://github.com/tayyebi}{github.com/tayyebi} \quad \href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}}
+  \ContactLine{\href{tel:+989120982276}{(+98) 912 - 098 2276}}\\
+  \ContactLine{\href{mailto:tayyebimohammadreza@gmail.com}{tayyebimohammadreza@gmail.com}}\\
+  \ContactLine{\href{https://github.com/tayyebi}{github.com/tayyebi}}\\
+  \ContactLine{\href{https://www.linkedin.com/in/mohammadrezatayyebi/}{linkedin.com/in/mohammadrezatayyebi}}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.48\textwidth}
+\begin{minipage}[t]{0.58\textwidth}
+  \vspace*{-\SectionBefore}
   \section{Skills}
   \begin{itemize}[leftmargin=\ListLeftMargin, label={}]
     \item {
@@ -151,11 +154,6 @@
       UML, Business Analysis, MCDA, Waterfall Methodology
     }
   \end{itemize}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.10\textwidth}
-  \raggedleft
-  \includegraphics[width=\linewidth]{pic.png}
 \end{minipage}
 
 % EXPERIENCE
