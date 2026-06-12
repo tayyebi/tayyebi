@@ -1,0 +1,4 @@
+latex/*.aux
+latex/*.log
+latex/*.out
+latex/*.pdf
